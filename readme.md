@@ -1,7 +1,7 @@
 
 <h1 align="center">Proyecto Inmobiliaria</h1>
 
-## Esta aplicacion es un sistema para gestionar funcionalidades dentro de una inmobiliaria, propgramado en php nativo, materialize, jquery, javascript, mysql. 
+## Esta aplicacion es un sistema para gestionar funcionalidades dentro de una inmobiliaria, programado en php nativo, materialize, jquery, javascript, mysql. 
 
 ##Instrucciones
 
