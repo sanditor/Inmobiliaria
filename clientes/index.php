@@ -81,7 +81,6 @@
                 <td><?php echo $f['correo'] ?></td>
                 <td><?php echo $f['asesor'] ?></td>
                 <td><a href="../propiedades/alta_propiedades.php?id=<?php echo $f['id'] ?>&nombre=<?php echo $f['nombre'] ?>" class="btn-floating green"><i class="material-icons" alt="editar">add</i></a></td>
-                <td>
                 <td><a href="editar_cliente.php?id=<?php echo $f['id'] ?>" class="btn-floating blue"><i class="material-icons" alt="editar">loop</i></a></td>
                 <td>
                   <a href="#" class="btn-floating red" onclick="swal({ title: 'Estas seguro que desea eliminar al cliente?',

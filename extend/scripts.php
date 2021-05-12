@@ -8,13 +8,12 @@
   $('select').material_select();
   //inicializar datepicker
   $('.datepicker').pickadate({
+    format: 'yyyy-m-d',
     selectMonths: true, // Creates a dropdown to control month
     selectYears: 15, // Creates a dropdown of 15 years to control year,
     today: 'Hoy',
     clear: 'limpiar',
-    close: 'Ok',
-    closeOnSelect: false // Close upon selecting a date,
-    // container: undefined, // ex. 'body' will append picker to body
+    close: 'Ok'
   });
 
   function may(obj, id){

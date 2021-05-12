@@ -20,7 +20,25 @@
       <div class="card-content">
         <h5 align="center"><b>DATOS GENERALES</b></h5>
         <form  action="ins_propiedad.php" method="post" autocomplete="off" >
-          <!--AJAX AQUI -->
+          <div class="row">
+              <div class="col s6">
+                <select id="estado" class="" name="estado" required>
+                  <option value="" disabled selected>SELECCIONA UN ESTADO</option>
+                  <?php  $sel_estado = $con->prepare("SELECT * FROM estados ");
+                  $sel_estado -> execute();
+                  $res_estado = $sel_estado->get_result();
+                  while ($f_estado = $res_estado->fetch_assoc()){?>
+                    <option value="<?php echo $f_estado['idestados'] ?>"><?php echo $f_estado['estado'] ?></option>
+                  <?php }
+                  $sel_estado->close();
+                  $con->close();
+                  ?>
+                </select>
+              </div>
+              <div class="col s6">
+                <div class="res_estado"></div>
+              </div>
+          </div>
         <div class="row">
           <div class="col s6">
               <input type="hidden" name="id_cliente" value="<?php echo $id ?>">
@@ -99,6 +117,7 @@
 
         <h5 align="center"><b>DATOS DE VENTA</b></h5>
         <div class="row">
+
           <div class="col s6">
 
             <div class="input-field">
@@ -106,9 +125,9 @@
               <label for="forma_pago">Forma de pago</label>
             </div>
 
-              <?php if ($_SESSION['rol'] == 'Administrador'): ?>
+              <?php if ($_SESSION['rol'] == 'Administrador') {?>
                 <select class="" name="asesor" required="">
-                  <option value="" disabled selected>Escoge un asesor</option>
+                  <option value="" disabled selected >ESCOGE UN ASESOR</option>
                 <?php $sel = $con->prepare("SELECT nombre FROM usuarios WHERE bloqueo = 1 ");
                 $sel->execute();
                 $res = $sel->get_result();
@@ -119,9 +138,9 @@
                   $con->close();
                   ?>
               </select>
-              <?php else: ?>
-                <input type="text" readonly name="asesor" value="<?php echo $_SESSION['nombre'] ?>">
-              <?php endif; ?>
+            <?php }else { ?>
+                <input type="text" readonly name="asesor" value="<?php echo $_SESSION['nombre'] ?>" />
+              <?php } ?>
 
             <select name="tipo_inmueble" required >
               <option value="" disabled selected  >ELIGE EL TIPO DE INMUEBLE</option>
@@ -166,5 +185,6 @@
 </div>
 
 <?php include '../extend/scripts.php'; ?>
+<script src="../js/estados.js"></script>
 </body>
 </html>

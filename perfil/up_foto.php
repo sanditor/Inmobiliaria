@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nombrearchivo=$_FILES['foto']['name'];
     $info = pathinfo($nombrearchivo);
 
-    if ($archivo != '') {
+    if ($nombrearchivo != '') {
         $extension = $info['extension'];
         if ($extension == "png" || $extension == "PNG" || $extension == "jpg" || $extension == "JPG") {
             unlink('../usuarios/'.$foto);

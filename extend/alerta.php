@@ -35,6 +35,9 @@ include '../conexion/conexion.php';
             case 'cli':
                 $carpeta = '../clientes/';
                 break;
+            case 'prop':
+                $carpeta = '../propiedades/';
+                break;
 
         }
 
