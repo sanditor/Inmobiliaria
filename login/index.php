@@ -5,9 +5,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $user = $con->real_escape_string($_POST['usuario']);
     $pass = $con->real_escape_string($_POST['pass']);
 
-    // var_dump($user.' '.$pass);
-    // die();
-
     //verificar espacios por sql injection
     $candado = ' ';
     $str_u = strpos($user, $candado);
